@@ -1,5 +1,5 @@
 {
-  "name": "@flipcard/utils",
+  "name": "@chenbitao/utils",
   "version": "0.0.1",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",

@@ -1,5 +1,5 @@
 {
-  "name": "@flipcard/docs",
+  "name": "@chenbitao/docs",
   "private": true,
   "scripts": {
     "storybook": "storybook dev -p 6006",
@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.1",
-    "@flipcard/react": "workspace:*",
+    "@chenbitao/react": "workspace:*",
     "@storybook/addon-a11y": "^9.0.16",
     "@storybook/addon-docs": "^9.0.16",
     "@storybook/addon-vitest": "^9.0.16",

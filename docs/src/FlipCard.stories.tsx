@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlipCardReact } from '@flipcard/react';
+import { FlipCardReact } from '@chenbitao/react';
 
 export default {
   title: 'FlipCard',

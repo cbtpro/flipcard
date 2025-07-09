@@ -18,7 +18,7 @@
     "rootDir": "./src",
     "outDir": "dist",
     "paths": {
-      "@flipcard/core": [
+      "@chenbitao/core": [
         "../../packages/core"
       ]
     }

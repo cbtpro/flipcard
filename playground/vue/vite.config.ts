@@ -10,8 +10,8 @@ export default defineConfig({
       /**
        * 配置热更新
        */
-      '@flipcard/core': path.resolve(__dirname, '../../packages/core/src'),
-      '@flipcard/vue': path.resolve(__dirname, '../../packages/vue/src'),
+      '@chenbitao/core': path.resolve(__dirname, '../../packages/core/src'),
+      '@chenbitao/vue': path.resolve(__dirname, '../../packages/vue/src'),
     }
   },
   optimizeDeps: {

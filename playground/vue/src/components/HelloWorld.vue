@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import FlipCardVue from '@flipcard/vue';
+import FlipCardVue from '@chenbitao/vue';
 
 defineProps<{ msg: string; }>();
 

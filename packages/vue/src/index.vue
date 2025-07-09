@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { onBeforeUnmount, onMounted, ref, toRefs } from 'vue';
-import { FlipCard, FlipCardOptions } from '@flipcard/core';
+import { FlipCard, FlipCardOptions } from '@chenbitao/core';
 
 interface IProps {
   children: React.ReactNode;

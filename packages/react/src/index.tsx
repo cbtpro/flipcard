@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { FlipCard, FlipCardOptions } from '@flipcard/core';
+import { FlipCard, FlipCardOptions } from '@chenbitao/core';
 
 export const FlipCardReact: React.FC<{
   children: React.ReactNode;

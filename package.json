@@ -1,5 +1,5 @@
 {
-  "name": "flipcard-monorepo",
+  "name": "flipcard",
   "private": true,
   "scripts": {
     "dev": "pnpm -r --filter ./playground/** run dev",
@@ -10,8 +10,8 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.1",
-    "@flipcard/react": "workspace:*",
-    "@flipcard/vue": "workspace:*",
+    "@chenbitao/react": "workspace:*",
+    "@chenbitao/vue": "workspace:*",
     "@storybook/addon-a11y": "^9.0.16",
     "@storybook/addon-docs": "^9.0.16",
     "@storybook/addon-vitest": "^9.0.16",
