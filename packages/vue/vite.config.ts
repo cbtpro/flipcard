@@ -17,11 +17,11 @@ export default defineConfig({
       formats: ['es', 'cjs']
     },
     rollupOptions: {
-      external: ['vue', '@chenbitao/core'],
+      external: ['vue', '@flipcard/core'],
       output: {
         globals: {
           vue: 'Vue',
-          '@chenbitao/core': 'FlipCardCore'
+          '@flipcard/core': 'FlipCardCore'
         }
       }
     }

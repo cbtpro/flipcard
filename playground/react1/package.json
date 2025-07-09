@@ -1,11 +1,11 @@
 {
-  "name": "@chenbitao/playground/react",
+  "name": "react1",
   "version": "0.0.1",
   "scripts": {
     "dev": "vite"
   },
   "dependencies": {
-    "@chenbitao/core": "workspace:*",
-    "@chenbitao/react": "workspace:*"
+    "@flipcard/core": "workspace:*",
+    "@flipcard/vue": "workspace:*"
   }
 }

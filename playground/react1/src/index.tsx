@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { FlipCardReact } from '@chenbitao/react';
+import { FlipCardReact } from '@flipcard/react';
 
 function MyButton() {
   return (

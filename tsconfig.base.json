@@ -10,16 +10,16 @@
     "outDir": "dist",
     "rootDir": ".",
     "paths": {
-      "@chenbitao/core": [
+      "@flipcard/core": [
         "packages/core/src/index.ts"
       ],
-      "@chenbitao/react": [
+      "@flipcard/react": [
         "packages/react/src/index.tsx"
       ],
-      "@chenbitao/vue": [
+      "@flipcard/vue": [
         "packages/vue/src/index.ts"
       ],
-      "@chenbitao/solid": [
+      "@flipcard/solid": [
         "packages/solid/src/index.ts"
       ]
     },

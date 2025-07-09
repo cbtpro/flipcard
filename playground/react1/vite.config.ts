@@ -9,8 +9,8 @@ export default defineConfig({
       /**
        * 配置热更新
        */
-      '@chenbitao/react': path.resolve(__dirname, '../../packages/react/src'),
-      '@chenbitao/core': path.resolve(__dirname, '../../packages/core/src')
+      '@flipcard/react': path.resolve(__dirname, '../../packages/react/src'),
+      '@flipcard/core': path.resolve(__dirname, '../../packages/core/src')
     }
   },
   server: {

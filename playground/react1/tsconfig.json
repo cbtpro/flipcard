@@ -5,10 +5,10 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "paths": {
-      "@chenbitao/core": [
+      "@flipcard/core": [
         "../../packages/core"
       ],
-      "@chenbitao/react": [
+      "@flipcard/react": [
         "../../packages/react"
       ]
     }

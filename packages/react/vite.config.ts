@@ -13,12 +13,12 @@ export default defineConfig({
       formats: ['es', 'cjs']
     },
     rollupOptions: {
-      external: ['react', 'react-dom', '@chenbitao/core'],
+      external: ['react', 'react-dom', '@flipcard/core'],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
-          '@chenbitao/core': 'FlipCardCore'
+          '@flipcard/core': 'FlipCardCore'
         }
       }
     }
