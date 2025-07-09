@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "paths": {
+      "@flipcard/core": [
+        "../../packages/core"
+      ],
+      "@flipcard/react": [
+        "../../packages/react"
+      ]
+    }
+  },
+  "include": [
+    "./**/*"
+  ]
+}

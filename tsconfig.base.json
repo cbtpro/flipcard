@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./build/cache/tsbuildinfo",
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "rootDir": ".",
+    "paths": {
+      "@flipcard/core": [
+        "packages/core/src/index.ts"
+      ],
+      "@flipcard/react": [
+        "packages/react/src/index.tsx"
+      ],
+      "@flipcard/vue": [
+        "packages/vue/src/index.ts"
+      ],
+      "@flipcard/solid": [
+        "packages/solid/src/index.ts"
+      ]
+    },
+  }
+}
