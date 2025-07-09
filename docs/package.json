@@ -24,5 +24,8 @@
     "vite": "^5.0.0",
     "vite-plugin-dts": "^4.5.4",
     "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "@flipcard/react": "^0.0.1"
   }
 }
