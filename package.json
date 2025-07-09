@@ -6,7 +6,8 @@
     "build": "pnpm -r run build",
     "clean": "rm -rf packages/*/dist",
     "storybook": "pnpm -r run storybook",
-    "build-storybook": "pnpm -r run build-storybook"
+    "build-storybook": "pnpm -r run build-storybook",
+    "publish": "pnpm publish --recursive --access public --filter ./packages/**"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.1",
