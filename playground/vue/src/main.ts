@@ -1,5 +1,6 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import '@flipcard/theme/assets/style/index.less';
+import '@flipcard/vue/switch/style/index.less';
 
-createApp(App).mount('#app')
+createApp(App).mount('#app');

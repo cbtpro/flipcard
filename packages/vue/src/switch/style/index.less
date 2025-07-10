@@ -1,0 +1,58 @@
+@import '@flipcard/theme/assets/style/variables.less';
+
+.@{prefix-name}-switch {
+  display: block;
+  position: relative;
+  width: 52px;
+  height: 32px;
+  border: 1px solid #DFDFDF;
+  outline: 0;
+  border-radius: 16px;
+  box-sizing: border-box;
+  // background-color: #DFDFDF;
+  // background-color: ~'var(--@{prefix-name}-switch-bg-color)';
+  background-color:~'var(--@{prefix-name}-switch-color)';
+  transition: background-color 0.1s, border 0.1s;
+  cursor: pointer;
+}
+
+.@{prefix-name}-switch:before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 30px;
+  border-radius: 15px;
+  // background-color: #FDFDFD;
+  transition: transform 0.35s cubic-bezier(0.45, 1, 0.4, 1);
+}
+
+.@{prefix-name}-switch:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  // background-color: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  transition: transform 0.35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+}
+
+.@{prefix-name}-switch-on {
+  border-color: #1AAD19;
+  // background-color: #1AAD19;
+  background-color:~'var(--@{prefix-name}-switch-on-bg-color)';
+}
+
+.@{prefix-name}-switch-on:before {
+  border-color: #1AAD19;
+  // background-color: #1AAD19;
+  background-color:~'var(--@{prefix-name}-switch-on-bg-color)';
+}
+
+.@{prefix-name}-switch-on:after {
+  transform: translateX(20px);
+}

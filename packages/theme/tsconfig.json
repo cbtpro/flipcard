@@ -1,18 +1,18 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./build/cache/tsbuildinfo",
     "composite": true,
     "module": "ESNext",
-    "target": "ES2023",
-    "lib": [
-      "ES2023"
-    ],
+    "target": "ESNext",
     "moduleResolution": "bundler",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "strict": true,
+    "declaration": true,
+    "declarationDir": "dist",
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
     "sourceMap": true,
     "baseUrl": "./",
     "rootDir": "./src",
@@ -21,19 +21,13 @@
       "@/*": [
         "./src/*"
       ],
-      "@flipcard/core": [
-        "../../packages/core"
-      ],
-      "@flipcard/theme": [
-        "../../packages/theme"
-      ]
     }
   },
   "include": [
     "src"
   ],
   "exclude": [
-    "node_modules",
-    "vite.config.ts"
+    "dist",
+    "node_modules"
   ]
 }

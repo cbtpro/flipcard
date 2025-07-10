@@ -9,6 +9,20 @@ export default defineConfig({
     outDir: 'dist', // 或者直接用 dist
     insertTypesEntry: true
   })],
+  css: {
+    preprocessorOptions: {
+      less: {
+        javascriptEnabled: true,
+        // 自动注入共享变量
+        additionalData: (content, filename) => {
+          if (filename.endsWith('.less')) {
+            return `@import "${path.resolve(__dirname, '../theme/src/assets/style/variables.less')}";\n${content}`;
+          }
+          return content;
+        }
+      },
+    },
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
@@ -17,13 +31,23 @@ export default defineConfig({
       formats: ['es', 'cjs']
     },
     rollupOptions: {
-      external: ['vue', '@flipcard/core'],
+      external: ['vue', '@flipcard/core', '@flipcard/theme'],
       output: {
         globals: {
           vue: 'Vue',
-          '@flipcard/core': 'FlipCardCore'
+          '@flipcard/core': 'FlipCardCore',
+          '@flipcard/theme': 'FlipCardTheme'
         }
       }
     }
-  }
+  },
+  resolve: {
+    alias: {
+      /**
+       * 配置热更新
+       */
+      '@flipcard/core': path.resolve(__dirname, '../../packages/core/src'),
+      '@flipcard/theme': path.resolve(__dirname, '../../packages/theme/src')
+    },
+  },
 });
