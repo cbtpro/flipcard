@@ -1,5 +1,6 @@
 {
   "name": "@flipcard/docs",
+  "version": "0.0.1-alpha.1",
   "private": true,
   "scripts": {
     "storybook": "storybook dev -p 6006",
