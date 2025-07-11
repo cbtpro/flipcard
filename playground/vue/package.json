@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@flipcard/core": "workspace:*",
-    "@flipcard/vue": "workspace:*",
+    "@flipcard/utils": "workspace:*",
     "@flipcard/theme": "workspace:*",
-    "vue": "^3.5.17"
+    "@flipcard/vue": "workspace:*"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.0",

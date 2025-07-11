@@ -24,6 +24,9 @@
       "@flipcard/core": [
         "../../packages/core"
       ],
+      "@flipcard/utils": [
+        "../../packages/utils"
+      ],
       "@flipcard/theme": [
         "../../packages/theme"
       ]

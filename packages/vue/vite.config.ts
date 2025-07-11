@@ -31,12 +31,13 @@ export default defineConfig({
       formats: ['es', 'cjs']
     },
     rollupOptions: {
-      external: ['vue', '@flipcard/core', '@flipcard/theme'],
+      external: ['vue', '@flipcard/core', '@flipcard/theme', '@flipcard/utils'],
       output: {
         globals: {
           vue: 'Vue',
           '@flipcard/core': 'FlipCardCore',
-          '@flipcard/theme': 'FlipCardTheme'
+          '@flipcard/theme': 'FlipCardTheme',
+          '@flipcard/utils': 'FlipCardUtils'
         }
       }
     }
@@ -47,6 +48,7 @@ export default defineConfig({
        * 配置热更新
        */
       '@flipcard/core': path.resolve(__dirname, '../../packages/core/src'),
+      '@flipcard/utils': path.resolve(__dirname, '../../packages/utils/src'),
       '@flipcard/theme': path.resolve(__dirname, '../../packages/theme/src')
     },
   },

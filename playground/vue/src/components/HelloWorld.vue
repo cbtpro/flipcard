@@ -6,7 +6,6 @@ import { prefixName } from '@flipcard/theme';
 defineProps<{ msg: string; }>();
 
 const bool = ref<boolean>(true);
-const count = ref(0);
 
 const defaultTheme = `${prefixName}-theme-light`;
 const darkThemeName = `${prefixName}-theme-dark`;
@@ -26,14 +25,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
   <button @click="onClick">点击换主题色</button>
   <FlipCardVue>
-    React Card
+    {{ msg }}
   </FlipCardVue>
   <SwitchVue v-model="bool" />
   <p>Switch is {{ bool ? 'on' : 'off' }}</p>
-  <div class="card">
+  <!-- <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
       Edit
@@ -50,7 +48,7 @@ onMounted(() => {
     Learn more about IDE Support for Vue in the
     <a href="https://vuejs.org/guide/scaling-up/tooling.html#ide-support" target="_blank">Vue Docs Scaling up Guide</a>.
   </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p> -->
 </template>
 
 <style scoped>

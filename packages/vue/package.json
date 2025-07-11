@@ -17,10 +17,12 @@
     }
   },
   "scripts": {
+    "dev": "vite build --watch",
     "build": "vite build"
   },
   "dependencies": {
     "@flipcard/core": "workspace:*",
+    "@flipcard/utils": "workspace:*",
     "@flipcard/theme": "workspace:*"
   }
 }

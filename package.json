@@ -2,7 +2,8 @@
   "name": "flipcard",
   "private": true,
   "scripts": {
-    "dev": "pnpm -r --filter ./playground/** run dev",
+    "dev:playground": "pnpm -r --filter ./playground/** run dev",
+    "dev": "pnpm -r --filter ./packages/** run dev",
     "build": "pnpm -r run build",
     "clean": "rm -rf packages/*/dist",
     "storybook": "pnpm -r run storybook",

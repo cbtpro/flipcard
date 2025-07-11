@@ -1,7 +1,28 @@
 {
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@flipcard/core": [
+        "../../packages/core/src"
+      ],
+      "@flipcard/theme": [
+        "../../packages/theme/src"
+      ],
+      "@flipcard/vue": [
+        "../../packages/vue/src"
+      ]
+    },
+  }
 }
