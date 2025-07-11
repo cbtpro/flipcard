@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { onBeforeUnmount, onMounted, ref, toRefs } from 'vue';
-import { FlipCard, FlipCardOptions } from '@flipcard/core';
+import { FlipCard, type FlipCardOptions } from '@flipcard/core';
 
 interface IProps {
   options?: FlipCardOptions;

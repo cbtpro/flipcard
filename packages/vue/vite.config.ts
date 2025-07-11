@@ -45,7 +45,7 @@ export default defineConfig({
   resolve: {
     alias: {
       /**
-       * 配置热更新
+       * 开发时使用src目录
        */
       '@flipcard/core': path.resolve(__dirname, '../../packages/core/src'),
       '@flipcard/utils': path.resolve(__dirname, '../../packages/utils/src'),

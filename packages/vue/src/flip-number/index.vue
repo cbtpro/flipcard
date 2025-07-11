@@ -6,10 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
 import FlipNumberItem from './item.vue';
 
-const props = defineProps<{
+defineProps<{
   numbers: number[];
   activeIndex: number;
   beforeIndex: number;
