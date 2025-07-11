@@ -24,6 +24,12 @@ pnpm run build
 npm login
 # 确保版本号已更新
 pnpm version patch # 或 minor/major
+# 预发布版本
+# pnpm version prerelease --preid alpha
+# 不触发commit和tag
+pnpm version patch --no-git-tag-version
+# 批量修改
+pnpm -r version patch
 # 提交代码
 # 发布到 npm
 pnpm run release

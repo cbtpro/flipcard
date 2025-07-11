@@ -1,5 +1,6 @@
 {
   "name": "flipcard",
+  "version": "0.0.1-alpha.0",
   "private": true,
   "scripts": {
     "dev:playground": "pnpm -r --filter ./playground/** run dev",
@@ -38,6 +39,5 @@
   "engines": {
     "pnpm": "^10.10.0",
     "node": "^20.19.3"
-  },
-  "version": "0.0.2"
+  }
 }
