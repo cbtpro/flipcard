@@ -8,7 +8,7 @@
     ".": {
       "import": "./dist/index.es.js",
       "require": "./dist/index.cjs.js",
-      "default": "./dist/index.es.js"
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
