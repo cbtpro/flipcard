@@ -4,3 +4,4 @@ node_modules/
 storybook-static
 dist/
 build/
+.DS_Store
