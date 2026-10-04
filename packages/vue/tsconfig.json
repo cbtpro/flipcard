@@ -6,7 +6,9 @@
     "module": "ESNext",
     "target": "ES2023",
     "lib": [
-      "ES2023"
+      "ES2023",
+      "DOM",
+      "DOM.Iterable"
     ],
     "moduleResolution": "bundler",
     "esModuleInterop": true,

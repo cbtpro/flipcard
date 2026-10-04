@@ -9,7 +9,9 @@
     "clean": "rm -rf packages/*/dist",
     "storybook": "pnpm -r run storybook",
     "build-storybook": "pnpm -r run build-storybook",
-    "publish": "pnpm publish --recursive --access public --filter ./packages/**"
+    "publish": "pnpm publish --recursive --access public --filter ./packages/**",
+    "test:playground": "node --test tests/playground.test.mjs",
+    "test:packages": "node --test tests/packages.test.mjs"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.1",

@@ -1,16 +1,15 @@
 {
   "name": "@flipcard/theme",
   "version": "0.0.1-alpha.1",
-  "main": "dist/index.cjs.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "style": "dist/style.css",
   "exports": {
     ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.cjs.js",
       "types": "./dist/index.d.ts",
-      "style": "./dist/style.css"
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs"
     },
     "./dist/style.css": {
       "default": "./dist/style.css"
@@ -18,11 +17,13 @@
     "./src/assets/style/variables.less": "./src/assets/style/variables.less"
   },
   "files": [
-    "dist"
+    "dist",
+    "src/assets/style/variables.less"
   ],
   "scripts": {
     "dev": "vite build --watch",
     "build": "vite build"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "type": "module"
 }

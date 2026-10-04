@@ -11,7 +11,7 @@ export class FlipCard {
 
   constructor(el: HTMLElement, options: FlipCardOptions = { trigger: 'hover' }) {
     this.el = el;
-    this.options = options;
+    this.options = { trigger: 'hover', ...options };
     this.flipped = !!options.flipped;
 
     this.setup();
@@ -20,6 +20,12 @@ export class FlipCard {
   private setup() {
     this.el.classList.add('flipcard-core');
     this.updateTransform();
+
+    if (this.options.trigger === 'click') {
+      const onClick = () => this.flip();
+      this.el.addEventListener('click', onClick);
+      this.cleanupFns.push(() => this.el.removeEventListener('click', onClick));
+    }
 
     if (this.options.trigger === 'hover') {
       const onEnter = () => this.flip(true);
@@ -44,6 +50,8 @@ export class FlipCard {
 
   destroy() {
     this.cleanupFns.forEach(fn => fn());
+    this.cleanupFns = [];
+    this.el.style.transform = '';
     this.el.classList.remove('flipcard-core');
   }
 }

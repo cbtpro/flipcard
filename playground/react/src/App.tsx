@@ -1,39 +1,27 @@
 import { useState } from 'react';
 import { FlipCardReact } from '@flipcard/react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  const [trigger, setTrigger] = useState<'hover' | 'click'>('hover');
+  const [flipped, setFlipped] = useState(false);
+  const [theme, setTheme] = useState('dark');
   return (
-    <>
-      <FlipCardReact>
-        <div>React Card</div>
-      </FlipCardReact>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className={`playground ${theme}`}>
+      <h1>FlipCard / React</h1>
+      <p>调整 props，体验悬停或点击翻转。</p>
+      <div className="preview">
+        <FlipCardReact options={{ trigger, flipped }}>
+          <div className="sample-card">FLIPCARD</div>
+        </FlipCardReact>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <section className="controls" aria-label="组件 props">
+        <label>主题<select value={theme} onChange={event => setTheme(event.target.value)}><option value="dark">深色</option><option value="light">浅色</option></select></label>
+        <label>options.trigger<select value={trigger} onChange={event => setTrigger(event.target.value as 'hover' | 'click')}><option value="hover">hover</option><option value="click">click</option></select></label>
+        <label><input type="checkbox" checked={flipped} onChange={event => setFlipped(event.target.checked)} /> options.flipped</label>
+      </section>
+      <pre>{JSON.stringify({ options: { trigger, flipped } }, null, 2)}</pre>
+    </main>
   );
 }
-
 export default App;

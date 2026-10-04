@@ -9,11 +9,11 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.tsx'),
       name: 'FlipCardReact',
-      fileName: (format) => `index.${format}.js`,
+      fileName: (format) => format === 'cjs' ? 'index.cjs' : 'index.es.js',
       formats: ['es', 'cjs']
     },
     rollupOptions: {
-      external: ['react', 'react-dom', '@flipcard/core'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', '@flipcard/core'],
       output: {
         globals: {
           react: 'React',

@@ -27,7 +27,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'FlipCardVue',
-      fileName: (format) => `index.${format}.js`,
+      fileName: (format) => format === 'cjs' ? 'index.cjs' : 'index.es.js',
       formats: ['es', 'cjs']
     },
     rollupOptions: {

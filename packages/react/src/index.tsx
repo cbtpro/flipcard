@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { FlipCard, FlipCardOptions } from '@flipcard/core';
+import { FlipCard, type FlipCardOptions } from '@flipcard/core';
 
 export const FlipCardReact: React.FC<{
   children: React.ReactNode;
@@ -11,7 +11,7 @@ export const FlipCardReact: React.FC<{
     if (!ref.current) return;
     const flip = new FlipCard(ref.current, options);
     return () => flip.destroy();
-  }, []);
+  }, [options?.trigger, options?.flipped]);
 
   return <div ref={ref} className="flipcard">{children}</div>;
 };

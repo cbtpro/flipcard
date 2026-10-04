@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onBeforeUnmount, onMounted, ref, toRefs } from 'vue';
+import { onBeforeUnmount, onMounted, ref, toRefs, watch } from 'vue';
 import { FlipCard, type FlipCardOptions } from '@flipcard/core';
 
 interface IProps {
@@ -30,6 +30,11 @@ onMounted(() => {
   }
   flip.value = new FlipCard(flipcardRef.value, options.value);
 });
+
+watch(options, (value) => {
+  flip.value?.destroy();
+  if (flipcardRef.value) flip.value = new FlipCard(flipcardRef.value, value);
+}, { deep: true });
 
 onBeforeUnmount(() => {
   if (flip.value) {

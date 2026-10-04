@@ -147,6 +147,9 @@ importers:
       '@flipcard/core':
         specifier: workspace:*
         version: link:../core
+      react:
+        specifier: ^18.0.0 || ^19.0.0
+        version: 19.1.0
 
   packages/theme: {}
 
@@ -163,6 +166,9 @@ importers:
       '@flipcard/utils':
         specifier: workspace:*
         version: link:../utils
+      vue:
+        specifier: ^3.5.0
+        version: 3.5.17(typescript@5.8.3)
 
   playground/react:
     dependencies:
