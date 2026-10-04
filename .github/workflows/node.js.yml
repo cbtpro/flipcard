@@ -1,36 +1,75 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: 编译产物
+name: CI and Playground Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
-    branches: [ "main" ]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - name: 检出代码
-        uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v6
 
-      - name: 设置 pnpm
-        # You may pin to the exact commit or the version.
-        # uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda
-        uses: pnpm/action-setup@v4.1.0
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          # Version of pnpm to install
-          version: 10.10.0
-          # If specified, run `pnpm install`
-          run_install: true
-      - name: 安装 依赖
-        run: pnpm install
+          node-version: 20.19.3
+          cache: pnpm
 
-      # - name: 测试
-      #   run: pnpm test
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - name: 编译
-        run: pnpm run build
+      - name: Build packages
+        run: pnpm -r --filter './packages/**' run build
 
+      - name: Test packages
+        run: pnpm test:packages
+
+      - name: Install Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Test playground
+        run: pnpm test:playground
+
+      - name: Build playgrounds
+        run: pnpm -r --filter './playground/**' run build
+
+      - name: Upload playground for Pages
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: playground/vue/dist
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Deploy playground
+        id: deployment
+        uses: actions/deploy-pages@v4

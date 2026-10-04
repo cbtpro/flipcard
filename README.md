@@ -117,3 +117,11 @@ playground 的字母示例使用四块联动牌。选择 flipMode / flipOrder �
 每个示例下方都有「组件使用示例」，代码随当前配置更新，可复制为独立 `.vue` 文件。五种示例包含 npm 包导入、所需样式、目标值更新和各自布局；时钟示例包含计时器暂停、恢复及卸载清理。
 
 航班配色参考实体翻页牌的深色牌面与浅色字符风格，状态文字的绿色、米白、琥珀色是本示例的设计选择。参考：[翻页牌制造商机场场景案例](https://www.flapdisplay.com/index.php/2026/07/06/lastcall-split-flap-picture-flap-display-hamad-airport/)。
+
+## Playground 自动部署
+
+`.github/workflows/node.js.yml` 在推送到 `main`、向 `main` 提交 PR 或手动运行时安装依赖，构建组件包，运行包测试及 Chromium 浏览器回归测试，并构建 playground。只有 `main` 分支的推送和手动运行会部署 Vue playground，PR 只执行检查。
+
+首次启用时，在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。随后推送到 `main`，或在 **Actions → CI and Playground Pages → Run workflow** 手动运行。部署完成后，工作流的 `github-pages` 环境会显示访问地址；本仓库当前 Pages 地址为 http://blog.chenbitao.com/flipcard/，最终地址以部署环境输出为准。
+
+部署产物为 `playground/vue/dist`，无需提交构建文件或维护 `gh-pages` 分支。Vite 使用相对资源路径 `base: './'`，可以在 `/flipcard/` 项目路径及自定义域名下加载资源。部署使用 GitHub 提供的 `GITHUB_TOKEN`，无需添加个人令牌。
